@@ -27,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         FollowPlayer();
     }
 
+    // Move around player figure
     void OnCameraMovement(InputValue input)
     {
         Vector2 inputVector = input.Get<Vector2>();
@@ -34,6 +35,7 @@ public class CameraMovement : MonoBehaviour
         transform.RotateAround(playerTransform.position, Vector3.up, inputVector.x); // Rotate around player
     }
 
+    // Zoom closer to or away from player figure
     void OnCameraZoom(InputValue input)
     {
         Vector2 inputVector = input.Get<Vector2>();
