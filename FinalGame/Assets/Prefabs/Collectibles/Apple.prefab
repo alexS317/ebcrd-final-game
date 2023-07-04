@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 572238316642052797}
   - component: {fileID: 1372053490428957613}
   - component: {fileID: 4858000894398604755}
+  - component: {fileID: 7467758004593312972}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -60,6 +61,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 1
+--- !u!114 &7467758004593312972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5832636765915234384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ba27c68adf55b44827826463beab16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDistance: {x: 0, y: 1, z: 0}
+  timeForMovement: 2
+  rotationSpeed: 1
 --- !u!1001 &4543915665265564215
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,9 +8,9 @@ public class GlobalStorage : MonoBehaviour
     public static GlobalStorage Instance;
 
     [field: SerializeField] public float PlayerHealth { get; private set; }
-    public float maxHealth { get; private set; }
+    public float MaxHealth { get; private set; }
 
-    private int coinScore;
+    private int _coinScore;
 
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class GlobalStorage : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        maxHealth = PlayerHealth;
+        MaxHealth = PlayerHealth;
 
         DontDestroyOnLoad(gameObject);
     }
@@ -31,8 +31,8 @@ public class GlobalStorage : MonoBehaviour
 
     public void IncreaseScore()
     {
-        coinScore++;
-        Debug.Log("Score: " + coinScore);
+        _coinScore++;
+        Debug.Log("Score: " + _coinScore);
     }
 
     public void DecreasePlayerHealth(float damage)
@@ -47,7 +47,7 @@ public class GlobalStorage : MonoBehaviour
     public void RestorePlayerHealth(float healthPoints)
     {
         PlayerHealth += healthPoints;
-        if (PlayerHealth >= maxHealth) PlayerHealth = maxHealth;
+        if (PlayerHealth >= MaxHealth) PlayerHealth = MaxHealth;
         Debug.Log("Player health: " + PlayerHealth);
     }
 }

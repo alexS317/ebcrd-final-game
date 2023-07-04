@@ -22,6 +22,6 @@ public class PlayerStatsUI : MonoBehaviour
     void Update()
     {
         // Scale player health according to health value
-        healthBar.transform.localScale = new Vector3(_storage.PlayerHealth / _storage.maxHealth, 1, 1);
+        healthBar.transform.localScale = new Vector3(_storage.PlayerHealth / _storage.MaxHealth, 1, 1);
     }
 }

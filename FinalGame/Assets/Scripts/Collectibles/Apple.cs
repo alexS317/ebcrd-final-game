@@ -9,8 +9,11 @@ public class Apple : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GlobalStorage.Instance.RestorePlayerHealth(healthPoints);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GlobalStorage.Instance.RestorePlayerHealth(healthPoints);
         
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

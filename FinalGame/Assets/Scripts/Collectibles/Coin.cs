@@ -7,8 +7,11 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        GlobalStorage.Instance.IncreaseScore();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GlobalStorage.Instance.IncreaseScore();
         
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

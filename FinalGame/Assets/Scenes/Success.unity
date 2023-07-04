@@ -438,6 +438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestartButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2053882074782414369, guid: 5a24a312940a24a45a491c4b43776e00,
+        type: 3}
+      propertyPath: m_text
+      value: You won!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a24a312940a24a45a491c4b43776e00, type: 3}
 --- !u!1 &1438059463
