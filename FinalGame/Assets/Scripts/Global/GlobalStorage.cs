@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalStorage : MonoBehaviour
 {
     public static GlobalStorage Instance;
 
     [field: SerializeField] public float PlayerHealth { get; private set; }
+    public float maxHealth { get; private set; }
 
     private int coinScore;
-    private float maxHealth;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,9 @@ public class GlobalStorage : MonoBehaviour
     {
         PlayerHealth -= damage;
         Debug.Log("Player health: " + PlayerHealth);
+
+        // If the player has no more health, the game is lost
+        if (PlayerHealth <= 0) SceneManager.LoadSceneAsync("GameOver");
     }
 
     public void RestorePlayerHealth(float healthPoints)

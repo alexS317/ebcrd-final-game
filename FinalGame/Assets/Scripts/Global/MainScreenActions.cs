@@ -12,6 +12,7 @@ public class MainScreenActions : MonoBehaviour
 
     public void StartGame()
     {
+        Destroy(GameObject.FindGameObjectWithTag("GlobalStorage")); // Destroy storage from previous game
         SceneManager.LoadSceneAsync("Level01");
     }
 
