@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 2053882073177221935}
   - component: {fileID: 2053882073177221928}
   - component: {fileID: 2053882073177221929}
+  - component: {fileID: 1816438774957982502}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -374,6 +375,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1816438774957982502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053882073177221930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff5793662d214d4b8f2230078c42a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053882073751167540
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +476,7 @@ GameObject:
   - component: {fileID: 2053882073796141731}
   - component: {fileID: 2053882073796141740}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +501,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 320, y: 80}
+  m_SizeDelta: {x: 420, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2053882073796141730
 CanvasRenderer:
@@ -571,7 +584,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2053882073796141731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1816438774957982502}
+        m_TargetAssemblyTypeName: MainScreenActions, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2053882074452809172
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +610,7 @@ GameObject:
   - component: {fileID: 2053882074452809001}
   - component: {fileID: 2053882074452809002}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,7 +635,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 80}
+  m_SizeDelta: {x: 420, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2053882074452809000
 CanvasRenderer:
@@ -693,7 +718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2053882074452809001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1816438774957982502}
+        m_TargetAssemblyTypeName: MainScreenActions, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2053882074782414371
 GameObject:
   m_ObjectHideFlags: 0
