@@ -10,7 +10,7 @@ public class GlobalStorage : MonoBehaviour
     [field: SerializeField] public float PlayerHealth { get; private set; }
     public float MaxHealth { get; private set; }
 
-    private int _coinScore;
+    public int CoinScore { get; private set; }
 
 
     // Start is called before the first frame update
@@ -31,8 +31,8 @@ public class GlobalStorage : MonoBehaviour
 
     public void IncreaseScore()
     {
-        _coinScore++;
-        Debug.Log("Score: " + _coinScore);
+        CoinScore++;
+        Debug.Log("Score: " + CoinScore);
     }
 
     public void DecreasePlayerHealth(float damage)
