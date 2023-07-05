@@ -373,11 +373,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFigure
       objectReference: {fileID: 0}
-    - target: {fileID: 6353247157429862475, guid: 15ecf0b406fb33d41a4473e9890973dd,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 7442885115730274364, guid: 15ecf0b406fb33d41a4473e9890973dd,
         type: 3}
       propertyPath: m_RootOrder
