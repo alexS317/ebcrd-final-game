@@ -11,8 +11,8 @@ public class GlobalStorage : MonoBehaviour
     [field: SerializeField] public int MaxAppleNr { get; private set; }
     public float MaxHealth { get; private set; }
     public int CoinScore { get; private set; }
-
     public int CurrentAppleNr { get; private set; }
+    public int DefeatedEnemies { get; private set; }
 
 
     // Start is called before the first frame update
@@ -41,8 +41,11 @@ public class GlobalStorage : MonoBehaviour
     {
         CurrentAppleNr++;
     }
-    
-    
+
+    public void EnemyCounter()
+    {
+        DefeatedEnemies++;
+    }
 
     public void DecreasePlayerHealth(float damage)
     {

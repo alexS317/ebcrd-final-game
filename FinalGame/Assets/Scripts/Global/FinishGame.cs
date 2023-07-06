@@ -16,6 +16,7 @@ public class FinishGame : MonoBehaviour
             {
                 SceneManager.LoadSceneAsync("Success");
             }
+            else Debug.Log("I need to find more coins!");
         }
     }
 }

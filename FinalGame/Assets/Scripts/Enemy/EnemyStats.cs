@@ -10,6 +10,10 @@ public class EnemyStats : MonoBehaviour
     {
         enemyHealth -= damage;
         Debug.Log("Enemy health: " + enemyHealth);
-        if (enemyHealth <= 0) Destroy(gameObject);
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+            GlobalStorage.Instance.EnemyCounter();
+        }
     }
 }
