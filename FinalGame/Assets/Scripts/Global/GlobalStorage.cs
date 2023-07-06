@@ -8,9 +8,11 @@ public class GlobalStorage : MonoBehaviour
     public static GlobalStorage Instance;
 
     [field: SerializeField] public float PlayerHealth { get; private set; }
+    [field: SerializeField] public int MaxAppleNr { get; private set; }
     public float MaxHealth { get; private set; }
-
     public int CoinScore { get; private set; }
+
+    public int CurrentAppleNr { get; private set; }
 
 
     // Start is called before the first frame update
@@ -35,6 +37,13 @@ public class GlobalStorage : MonoBehaviour
         Debug.Log("Score: " + CoinScore);
     }
 
+    public void SpawnApple()
+    {
+        CurrentAppleNr++;
+    }
+    
+    
+
     public void DecreasePlayerHealth(float damage)
     {
         PlayerHealth -= damage;
@@ -46,6 +55,7 @@ public class GlobalStorage : MonoBehaviour
 
     public void RestorePlayerHealth(float healthPoints)
     {
+        CurrentAppleNr--;
         PlayerHealth += healthPoints;
         if (PlayerHealth >= MaxHealth) PlayerHealth = MaxHealth;
         Debug.Log("Player health: " + PlayerHealth);

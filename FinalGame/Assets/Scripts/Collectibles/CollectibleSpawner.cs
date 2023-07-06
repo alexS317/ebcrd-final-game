@@ -10,22 +10,18 @@ public class CollectibleSpawner : MonoBehaviour
 
     [SerializeField] private float timeBetweenSpawns;
 
-    [SerializeField] private int maxObjectNr;
-
     private bool _coroutineAllowed;
-    private int _currentObjectNr;
 
     // Start is called before the first frame update
     void Start()
     {
         _coroutineAllowed = true;
-        _currentObjectNr = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_currentObjectNr < maxObjectNr)
+        if (GlobalStorage.Instance.CurrentAppleNr < GlobalStorage.Instance.MaxAppleNr)
             if (_coroutineAllowed) StartCoroutine(SpawnObject());
     }
 
@@ -50,7 +46,8 @@ public class CollectibleSpawner : MonoBehaviour
 
         // Spawn new object
         GameObject newCollectible = Instantiate(collectible, spawnPos, transform.rotation);
-        _currentObjectNr++;
+        // _currentObjectNr++;
+        GlobalStorage.Instance.SpawnApple();
 
         yield return new WaitForSeconds(timeBetweenSpawns);
         

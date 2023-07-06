@@ -1006,8 +1006,7 @@ MonoBehaviour:
   terrain: {fileID: 114024752}
   collectible: {fileID: 5832636765915234384, guid: 07e4b28d3dc68e94481b48bc2f052e20,
     type: 3}
-  timeBetweenSpawns: 15
-  maxObjectNr: 20
+  timeBetweenSpawns: 5
 --- !u!1001 &813162797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1838,6 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerHealth>k__BackingField: 10
+  <MaxAppleNr>k__BackingField: 20
 --- !u!1001 &1750430852
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,17 +9,20 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.GetType() == typeof(BoxCollider))
         {
-            Debug.Log("Enemy hit");
-            var enemyStats = other.gameObject.GetComponent<EnemyStats>();
-            enemyStats.TakeDamage(damage);
-        }
-        
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player hit");
-            GlobalStorage.Instance.DecreasePlayerHealth(damage);
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Enemy hit");
+                var enemyStats = other.gameObject.GetComponent<EnemyStats>();
+                enemyStats.TakeDamage(damage);
+            }
+
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Debug.Log("Player hit");
+                GlobalStorage.Instance.DecreasePlayerHealth(damage);
+            }
         }
     }
 }

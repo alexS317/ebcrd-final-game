@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869858404835951885}
   - component: {fileID: 6286264155646627767}
+  - component: {fileID: 4497834725066041309}
   - component: {fileID: 5006602427243313904}
   - component: {fileID: 7951631387704212794}
   - component: {fileID: 6050460425796687354}
@@ -111,6 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0630579, y: 2.0842624, z: 0.9221466}
   m_Center: {x: 0, y: 1.0295515, z: 0.049354345}
+--- !u!135 &4497834725066041309
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543358274036358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5006602427243313904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5e0755345990247b5bfbde15642af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runningSpeed: 2
+  runningSpeed: 6
   weapon: {fileID: 5799624900077622180}
   animator: {fileID: 1260800279012762721}
 --- !u!195 &3566005626469305814

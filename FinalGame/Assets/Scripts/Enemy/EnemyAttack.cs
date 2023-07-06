@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
     {
         _weaponCollider.enabled = EnemyAnimEvents.IsHitting;
 
-        DetectPlayer();
+        // DetectPlayer();
     }
 
     void DetectPlayer()
@@ -39,6 +39,22 @@ public class EnemyAttack : MonoBehaviour
             transform.Translate(Vector3.forward * (runningSpeed * Time.deltaTime));
 
             if (Vector3.Distance(transform.position, hitInfo.transform.position) <= 2f)
+            {
+                animator.SetTrigger("attack");
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform.CompareTag("Player"))
+        {
+            // Debug.Log("Player detected");
+            
+            transform.LookAt(other.transform, Vector3.up);
+            transform.Translate(Vector3.forward * (runningSpeed * Time.deltaTime));
+
+            if (Vector3.Distance(transform.position, other.transform.position) <= 2f)
             {
                 animator.SetTrigger("attack");
             }
