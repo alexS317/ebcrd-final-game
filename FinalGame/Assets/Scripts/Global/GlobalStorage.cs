@@ -42,6 +42,11 @@ public class GlobalStorage : MonoBehaviour
         CurrentAppleNr++;
     }
 
+    public void ResetApples()
+    {
+        CurrentAppleNr = 0;
+    }
+
     public void EnemyCounter()
     {
         DefeatedEnemies++;

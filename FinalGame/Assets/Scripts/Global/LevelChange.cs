@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishGame : MonoBehaviour
+public class LevelChange : MonoBehaviour
 {
     [SerializeField] private int coinsToWin;
+    [SerializeField] private string levelName;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +15,8 @@ public class FinishGame : MonoBehaviour
         {
             if (coinsToWin == GlobalStorage.Instance.CoinScore)
             {
-                SceneManager.LoadSceneAsync("Success");
+                SceneManager.LoadSceneAsync(levelName);
+                GlobalStorage.Instance.ResetApples();
             }
             else Debug.Log("I need to find more coins!");
         }
