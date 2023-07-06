@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleSpawner : MonoBehaviour
@@ -21,6 +20,7 @@ public class CollectibleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Spawn apples as long as the max nr isn't reached yet
         if (GlobalStorage.Instance.CurrentAppleNr < GlobalStorage.Instance.MaxAppleNr)
             if (_coroutineAllowed) StartCoroutine(SpawnObject());
     }
@@ -46,8 +46,7 @@ public class CollectibleSpawner : MonoBehaviour
 
         // Spawn new object
         GameObject newCollectible = Instantiate(collectible, spawnPos, transform.rotation);
-        // _currentObjectNr++;
-        GlobalStorage.Instance.SpawnApple();
+        GlobalStorage.Instance.SpawnAppleCounter();
 
         yield return new WaitForSeconds(timeBetweenSpawns);
         

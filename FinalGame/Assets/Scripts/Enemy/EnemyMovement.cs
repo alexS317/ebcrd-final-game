@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -35,11 +33,13 @@ public class EnemyMovement : MonoBehaviour
         animator.SetBool("run", _isMoving);
     }
     
+    // Find the next target position to go to
     void ChangeTargetPosition()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
-        Vector3 targetPosition = transform.position + randomDirection;
+        Vector3 randomDirection = Random.insideUnitSphere * radius; // Select a random direction within radius
+        Vector3 targetPosition = transform.position + randomDirection;  // Set target position
 
+        // If the nearest point is found, set the new destination
         if (NavMesh.SamplePosition(targetPosition, out var hit, radius, 1))
         {
             _navMeshAgent.SetDestination(targetPosition);

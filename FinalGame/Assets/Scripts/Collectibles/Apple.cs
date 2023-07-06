@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
@@ -11,7 +8,7 @@ public class Apple : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GlobalStorage.Instance.RestorePlayerHealth(healthPoints);
+            GlobalStorage.Instance.IncreasePlayerHealth(healthPoints);   // Increase player health
         
             Destroy(gameObject);
         }

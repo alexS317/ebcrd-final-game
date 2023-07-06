@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _weaponCollider.enabled = PlayerAnimEvents.IsHitting;
+        _weaponCollider.enabled = PlayerAnimEvents.IsHitting;   // Set weapon collider based on play events
     }
 
     void OnAttack(InputValue input)

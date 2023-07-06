@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectibleMovement : MonoBehaviour
@@ -20,6 +18,7 @@ public class CollectibleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set start and target position
         _originalStartPos = transform.position;
         _originalTargetPos = _originalStartPos + movementDistance;
         ChangeMovementDirection();
@@ -31,16 +30,19 @@ public class CollectibleMovement : MonoBehaviour
         Move();
     }
 
+    // Linear movement
     void Move()
     {
         if (_passedTime >= timeForMovement) ChangeMovementDirection();
 
+        // Move linearly between positions
         transform.position = Vector3.Lerp(_currentStartPos, _currentTargetPos, _passedTime / timeForMovement);
         _passedTime += Time.deltaTime;
         
-        transform.Rotate(Vector3.up, rotationSpeed);
+        transform.Rotate(Vector3.up, rotationSpeed);    // Object rotates around its own axis
     }
 
+    // If the movement in one direction has been completed, the direction changes
     void ChangeMovementDirection()
     {
         if (_movingForward)
@@ -54,7 +56,7 @@ public class CollectibleMovement : MonoBehaviour
             _currentTargetPos = _originalStartPos;
         }
 
-        _passedTime = 0;
-        _movingForward = !_movingForward;
+        _passedTime = 0;    // Reset passed time
+        _movingForward = !_movingForward;   // Switch condition for movement direction
     }
 }

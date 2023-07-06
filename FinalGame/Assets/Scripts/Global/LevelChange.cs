@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +13,7 @@ public class LevelChange : MonoBehaviour
             if (coinsToWin == GlobalStorage.Instance.CoinScore)
             {
                 SceneManager.LoadSceneAsync(levelName);
-                GlobalStorage.Instance.ResetApples();
+                GlobalStorage.Instance.ResetAppleCounter(); // Reset apple counter for new level
             }
             else Debug.Log("I need to find more coins!");
         }

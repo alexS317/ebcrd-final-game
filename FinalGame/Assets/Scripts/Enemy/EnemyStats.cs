@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -10,10 +8,12 @@ public class EnemyStats : MonoBehaviour
     {
         enemyHealth -= damage;
         Debug.Log("Enemy health: " + enemyHealth);
+        
+        // If the health is 0, destroy the enemy and increase the counter
         if (enemyHealth <= 0)
         {
             Destroy(gameObject);
-            GlobalStorage.Instance.EnemyCounter();
+            GlobalStorage.Instance.IncreaseEnemyCounter();
         }
     }
 }

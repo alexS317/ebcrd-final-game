@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +7,11 @@ public class GlobalStorage : MonoBehaviour
 
     [field: SerializeField] public float PlayerHealth { get; private set; }
     [field: SerializeField] public int MaxAppleNr { get; private set; }
+    
     public float MaxHealth { get; private set; }
     public int CoinScore { get; private set; }
     public int CurrentAppleNr { get; private set; }
-    public int DefeatedEnemies { get; private set; }
+    public int DefeatedEnemyNr { get; private set; }
 
 
     // Start is called before the first frame update
@@ -21,14 +20,9 @@ public class GlobalStorage : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        MaxHealth = PlayerHealth;
+        MaxHealth = PlayerHealth;   // Set max health
 
-        DontDestroyOnLoad(gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        DontDestroyOnLoad(gameObject);  // Keep object in other scenes
     }
 
     public void IncreaseScore()
@@ -37,19 +31,19 @@ public class GlobalStorage : MonoBehaviour
         Debug.Log("Score: " + CoinScore);
     }
 
-    public void SpawnApple()
+    public void SpawnAppleCounter()
     {
         CurrentAppleNr++;
     }
 
-    public void ResetApples()
+    public void ResetAppleCounter()
     {
         CurrentAppleNr = 0;
     }
 
-    public void EnemyCounter()
+    public void IncreaseEnemyCounter()
     {
-        DefeatedEnemies++;
+        DefeatedEnemyNr++;
     }
 
     public void DecreasePlayerHealth(float damage)
@@ -61,11 +55,13 @@ public class GlobalStorage : MonoBehaviour
         if (PlayerHealth <= 0) SceneManager.LoadSceneAsync("GameOver");
     }
 
-    public void RestorePlayerHealth(float healthPoints)
+    public void IncreasePlayerHealth(float healthPoints)
     {
         CurrentAppleNr--;
         PlayerHealth += healthPoints;
-        if (PlayerHealth >= MaxHealth) PlayerHealth = MaxHealth;
         Debug.Log("Player health: " + PlayerHealth);
+        
+        // Don't allow player health to get bigger than the initial value
+        if (PlayerHealth >= MaxHealth) PlayerHealth = MaxHealth;
     }
 }

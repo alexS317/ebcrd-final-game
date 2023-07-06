@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimEvents : MonoBehaviour
 {
-    public static bool IsHitting { get; private set; } = false;
+    public static bool IsHitting { get; private set; }
 
-    void AttackHit(int nr)
+    // Hit something
+    void AttackHit()
     {
         IsHitting = true;
     }
 
-    void AttackFinish(int nr)
+    // Finish attack
+    void AttackFinish()
     {
         IsHitting = false;
     }
