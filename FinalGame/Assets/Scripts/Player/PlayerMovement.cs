@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
+
+        // Game is over if the player falls off the terrain
+        if (transform.position.y < -10) SceneManager.LoadSceneAsync("GameOver");
     }
 
     // Set _isGrounded bool

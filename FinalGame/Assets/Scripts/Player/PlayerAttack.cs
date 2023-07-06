@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [SerializeField] private float damage;
+    
     [SerializeField] private Animator animator;
     
     // Start is called before the first frame update
