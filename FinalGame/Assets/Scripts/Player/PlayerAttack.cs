@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // [SerializeField] private float damage;
-
     [SerializeField] private GameObject weapon;
     
     [SerializeField] private Animator animator;
@@ -23,20 +21,11 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _weaponCollider.enabled = AttackAnimEvents.IsHitting;
+        _weaponCollider.enabled = PlayerAnimEvents.IsHitting;
     }
 
     void OnAttack(InputValue input)
     {
         animator.SetTrigger("attack");
     }
-
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     if (other.gameObject.CompareTag("Enemy"))
-    //     {
-    //         var enemyStats = other.gameObject.GetComponent<EnemyStats>();
-    //         enemyStats.TakeDamage(damage);
-    //     }
-    // }
 }

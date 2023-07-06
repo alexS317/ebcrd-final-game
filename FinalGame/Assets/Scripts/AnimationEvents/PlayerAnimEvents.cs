@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackAnimEvents : MonoBehaviour
+public class PlayerAnimEvents : MonoBehaviour
 {
     public static bool IsHitting { get; private set; } = false;
 
