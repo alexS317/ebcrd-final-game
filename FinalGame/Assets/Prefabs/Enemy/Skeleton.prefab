@@ -11,10 +11,13 @@ GameObject:
   - component: {fileID: 869858404835951885}
   - component: {fileID: 6286264155646627767}
   - component: {fileID: 5006602427243313904}
+  - component: {fileID: 7951631387704212794}
+  - component: {fileID: 6050460425796687354}
   - component: {fileID: 1012417356309488089}
+  - component: {fileID: 3566005626469305814}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +67,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &7951631387704212794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543358274036358}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7688d3a99fc10046b96c40a5b14dba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1260800279012762721}
+  radius: 20
+--- !u!114 &6050460425796687354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543358274036358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af09cbbc850da746898eca71478e15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 5
 --- !u!114 &1012417356309488089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +107,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 1
-  enemyHealth: 5
+--- !u!195 &3566005626469305814
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175543358274036358}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &4617832861813463536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +208,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 4d49a4ae52171234a864b5f1eebc271b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24930fcfbed1b66499bf129311323d22, type: 3}
+--- !u!95 &1260800279012762721 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 24930fcfbed1b66499bf129311323d22,
+    type: 3}
+  m_PrefabInstance: {fileID: 4617832861813463536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5160966813197614619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24930fcfbed1b66499bf129311323d22,
